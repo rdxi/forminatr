@@ -29,7 +29,7 @@ Vue.component('radio-component', {
     :style="computedAnimationDuration"
   >
     <input type="radio"
-      v-bind:name="dateCreated"
+      v-bind:name="generatedName"
       v-model="activeRadio"
       v-for="index in numberOfRadios"
       v-bind:value="index"
@@ -47,7 +47,7 @@ Vue.component('radio-component', {
   data: function() {
     return {
       activeRadio: null,
-      dateCreated: null
+      generatedName: null
     };
   },
 
@@ -67,6 +67,7 @@ Vue.component('radio-component', {
   computed: {
     computedAnimationDuration: function() {
       return {
+        // first radio - slowest animation, last radio - fastest animation
         'animation-duration': (this.numberOfRadios / this.activeRadio)/(2*this.numberOfRadios) + 's'
       };
     },
@@ -77,7 +78,7 @@ Vue.component('radio-component', {
     }
   },
   created: function() {
-    this.dateCreated = new Date().getTime();
+    this.generatedName = new Date().getTime() + Math.round(Math.random()*1000);
   }
 });
 
