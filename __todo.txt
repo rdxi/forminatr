@@ -1,0 +1,9 @@
+﻿- крестик в текстовом инпуте для удаления текста
+- ? двойная анимация при активации: 1. радиал градиент увеличивается из центра, 2. pulse
+- ? звук "клик" при переключении инпута
+- радио-баттоны регулируют высоту звука
+- flexbox
+- square bgs
+- tomtom club sample
+- poptepic angry face with microphone as logo
+- title with big bold font
