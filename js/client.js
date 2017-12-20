@@ -1,8 +1,12 @@
 Vue.component('input-component', {
   template:
   `
-  <label class="element-wrap" :class="computedClass">
-    <input type="text" v-model="isActive">
+  <label class="element-wrap" :class="computedClass" :style="styleObject">
+    <div class="textinput-wrap">
+      <input type="text" v-model="isActive">
+      <div class="textinput-control textinput-control--fill-input" @click="fillInput">Fill input</div>
+      <div class="textinput-control textinput-control--clear-input" @click="clearInput">Clear input</div>
+    </div>
   </label>
   `,
 
@@ -11,7 +15,23 @@ Vue.component('input-component', {
       isActive: null
     };
   },
+
+  methods: {
+    fillInput: function() {
+      this.isActive = 'some text!';
+    },
+
+    clearInput: function() {
+      this.isActive = null;
+    }
+
+  },
   computed: {
+    styleObject: function() {
+      return {
+        'background-color': randomColor()
+      };
+    },
     computedClass: function() {
       return {
         'element-wrap--active': this.isActive
@@ -26,7 +46,7 @@ Vue.component('radio-component', {
   <div class="element-wrap"
     @click.self="nextRadio"
     :class="computedClass"
-    :style="computedAnimationDuration"
+    :style="styleObject"
   >
     <input type="radio"
       v-bind:name="generatedName"
@@ -56,19 +76,16 @@ Vue.component('radio-component', {
     nextRadio: function() {
       if (this.activeRadio === this.numberOfRadios) {
         this.activeRadio = null;
-        // document.querySelector(".element-wrap--active").style.animationDuration
-        // set animation duration css rule to (this.numberOfRadios / this.activeRadio)
       } else {
         this.activeRadio++;
-        // this.styleObject['animation-duration'] = (this.numberOfRadios / this.activeRadio)/2 + 's';
       }
     }
   },
   computed: {
-    computedAnimationDuration: function() {
+    styleObject: function() {
       return {
-        // first radio - slowest animation, last radio - fastest animation
-        'animation-duration': (this.numberOfRadios / this.activeRadio)/(2*this.numberOfRadios) + 's'
+        'animation-duration': (this.numberOfRadios / this.activeRadio)/(2*this.numberOfRadios) + 's', // first radio - slowest animation, last radio - fastest animation
+        'background-color': randomColor()
       };
     },
     computedClass: function() {
@@ -85,7 +102,7 @@ Vue.component('radio-component', {
 Vue.component('checkbox-component', {
   template:
   `
-  <label class="element-wrap" :class="computedClass">
+  <label class="element-wrap" :class="computedClass" :style="styleObject">
     <input type="checkbox" v-model="isActive">
   </label>
   `,
@@ -96,6 +113,11 @@ Vue.component('checkbox-component', {
     };
   },
   computed: {
+    styleObject: function() {
+      return {
+        'background-color': randomColor()
+      };
+    },
     computedClass: function() {
       return {
         'element-wrap--active': this.isActive
@@ -107,7 +129,7 @@ Vue.component('checkbox-component', {
 Vue.component('button-component', {
   template:
   `
-  <label class="element-wrap" :class="computedClass">
+  <label class="element-wrap" :class="computedClass" :style="styleObject">
     <button @click="toggleClass">Click me</button>
   </label>
   `,
@@ -118,7 +140,16 @@ Vue.component('button-component', {
     };
   },
 
+  mounted: function() {
+    this.isActive = this.isActiveProp;
+  },
+
   computed: {
+    styleObject: function() {
+      return {
+        'background-color': randomColor()
+      };
+    },
     computedClass: function() {
       return {
         'element-wrap--active': this.isActive

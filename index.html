@@ -13,6 +13,7 @@
   <div class="page-subtitle">
     Make music with form inputs  ͡(° ͜ʖ ͡°)
   </div>
+
   <div id="vue-app">
     <button-component></button-component>
     <button-component></button-component>
@@ -23,8 +24,18 @@
     <radio-component v-bind:number-of-radios="2"></radio-component>
     <radio-component v-bind:number-of-radios="5"></radio-component>
     <input-component></input-component>
+    <input-component></input-component>
+    <div class="textarea-container">
+      <input-component></input-component>
+      <button-component></button-component>
+      <checkbox-component></checkbox-component>
+    </div>
+    <checkbox-component></checkbox-component>
+    <radio-component v-bind:number-of-radios="1"></radio-component>
+    <radio-component v-bind:number-of-radios="3"></radio-component>
   </div>
 
+  <script src="js/randomColor.min.js"></script>
   <script src="js/vue.js"></script>
   <script src="js/client.js"></script>
 </body>

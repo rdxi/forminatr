@@ -2,6 +2,7 @@ body {
   padding: 20px;
   margin: 0 auto;
   font-family: sans-serif;
+  font-size: 16px;
   max-width: 1200px;
 }
 
@@ -15,6 +16,7 @@ h1 {
 .page-title {
   font-size: 54px;
   text-align: center;
+  margin-bottom: 10px;
 }
 
 .page-subtitle {
@@ -27,22 +29,93 @@ h1 {
   flex-wrap: wrap;
 }
 
-.element-wrap {
-  display: inline-block;
-  vertical-align: middle;
+.textinput-wrap {
   position: relative;
-  padding: 20px;
-  /* border-radius: 5px; */
-  transition: 0.2s background-color;
-  background-color: #ddd;
+  display: flex;
+  width: 100%;
 }
 
-.element-wrap:hover {
+.textinput-wrap input {
+  width: 100%;
+}
+
+.textinput-control {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  font-size: 10px;
+  color: #3a3a3a;
+  text-decoration: underline;
+}
+
+.textinput-control--clear-input {
+  left: auto;
+  right: 0;
+}
+
+.element-wrap {
+  z-index: 1;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-grow: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  transition: 0.2s all;
+}
+
+.element-wrap:not(.element-wrap--active) {
+  background-color: #ddd !important;
+}
+
+.element-wrap:hover:not(.element-wrap--active) {
   background-color: #eee;
 }
 
 .element-wrap--active {
-  animation: pulse-background2 1s infinite alternate;
+  background-color: #00a1ff;
+  animation: pulse-background-hue 0.5s infinite alternate;
+  /* animation: pulse-background2 1s infinite alternate; */
+  /* animation: pulse-background4 1s infinite alternate; */
+
+  /* animation: pulse-background2 1s infinite alternate; */
+  /* background-color: peachpuff; */
+  /* background-size: 100%;
+  background-position: center; */
+  /* background-image: radial-gradient(transparent 0%, transparent 50%, turquoise 50%); */
+}
+
+@keyframes pulse-background-hue {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(60deg);
+    transform: scale(0.9);
+  }
+}
+
+@keyframes pulse-background4 {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 0.5;
+  }
+}
+
+@keyframes pulse-background3 {
+  0% {
+    background-size: 10%;
+    /* background-image: radial-gradient(transparent 0%, rgba(0,0,0,0.5) 100%); */
+    /* background-position: 0 0; */
+  }
+  100% {
+    background-size: 300%;
+    /* background-image: radial-gradient(#ccc 50%, transparent 100%); */
+    /* background-position: -50% -50%; */
+  }
 }
 
 @keyframes pulse-background2 {
@@ -53,7 +126,6 @@ h1 {
     background-color: turquoise;
   }
 }
-
 
 @keyframes pulse-background {
   0% {
