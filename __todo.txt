@@ -1,4 +1,8 @@
-﻿- каждому типу инпутов свой тон: кнопкам - синий, радио - красный
+﻿- "drum machine" - https://en.wikipedia.org/wiki/Drum_machine
+- "Beatboxing" - CHECK OUT WIKIPEDIA SAMPLE FILE - ITS AWESOME - https://en.wikipedia.org/wiki/Beatboxing
+- https://developer.mozilla.org/en-US/docs/Web/API/DelayNode
+- возможность добавлять путь к музыке в разметку компонента в html
+- каждому типу инпутов свой тон: кнопкам - синий, радио - красный
 - (pretty blue #00a1ff)(pulse-darken looks ok) меняем background-color у элементов через js, - переделать кейфреймы на radial gradient: 0%solid 50%transparent 100%solid
 - vuex - сохранять состояние в local storage (весь vuex обьект). и загружать из него при обновлении страницы (компоненты одного типа определять по индексу)
 - добавить селект с готовыми состояниями страницы
@@ -11,3 +15,6 @@
 - tomtom club sample
 - poptepic angry face with microphone as logo
 - title with big bold font
+
+
+- *NO! TOO COPLEX ATM, JUST MAKE VUE.JS DEMO FOR NOW* audio visualizer tutorial: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API, https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaStreamSource also check https://codepen.io/awesomecoding/pen/rVBaab and https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createAnalyser and https://www.patrick-wied.at/blog/how-to-create-audio-visualizations-with-javascript-html and https://github.com/wayou/HTML5_Audio_Visualizer and https://github.com/willianjusten/awesome-audio-visualization

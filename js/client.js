@@ -1,3 +1,26 @@
+var audioFiles = {
+  1: 'css/sounds/01.mp3'
+};
+
+// shows false when changing radios!
+// var utils = {
+//   isPlaying: function(audioObj) {
+//     return audioObj
+//         && audioObj.currentTime > 0
+//         && !audioObj.paused
+//         && !audioObj.ended
+//         && audioObj.readyState > 2;
+//   }
+// };
+
+// var soundOfMessage = new Audio('css/sounds/new-message.mp3');
+// soundOfMessage.volume = 0.5;
+
+// module.exports = soundOfMessage;
+
+// soundOfMessage.play()
+
+
 Vue.component('input-component', {
   template:
   `
@@ -61,27 +84,57 @@ Vue.component('radio-component', {
     numberOfRadios: {
       type: Number,
       default: 1
+    },
+    soundFilePath: {
+      type: String,
+      default: ''
     }
   },
+
 
   data: function() {
     return {
       activeRadio: null,
-      generatedName: null
+      generatedName: null,
+      sound: new Audio(this.soundFilePath),
     };
   },
 
-
   methods: {
+    soundIsPlaying: function() {
+      return utils.isPlaying(this.sound);
+    },
     nextRadio: function() {
       if (this.activeRadio === this.numberOfRadios) {
         this.activeRadio = null;
       } else {
         this.activeRadio++;
       }
+    },
+    changeSoundSpeed: function() {
+      return this.sound.playbackRate = (this.numberOfRadios / this.activeRadio)/(2*this.numberOfRadios);
+    }
+  },
+  watch: {
+    activeRadio: function() {
+      // console.log('huh');
+      if (this.activeRadio) {
+        this.sound.play();
+      } else {
+        this.sound.currentTime = 0;
+        this.sound.pause();
+      }
     }
   },
   computed: {
+    // toggleSound: function() {
+    //   if (this.activeRadio) {
+    //     this.sound.play();
+    //   } else {
+    //     this.sound.currentTime = 0;
+    //     this.sound.pause();
+    //   }
+    // },
     styleObject: function() {
       return {
         'animation-duration': (this.numberOfRadios / this.activeRadio)/(2*this.numberOfRadios) + 's', // first radio - slowest animation, last radio - fastest animation
@@ -95,6 +148,8 @@ Vue.component('radio-component', {
     }
   },
   created: function() {
+    this.sound.loop = true;
+    this.sound.preload = 'auto';
     this.generatedName = new Date().getTime() + Math.round(Math.random()*1000);
   }
 });
