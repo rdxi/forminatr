@@ -11,7 +11,11 @@
 <body>
   <h1 class="page-title">Forminatr</h1>
   <div class="page-subtitle">
-    Make music with form inputs  ͡(° ͜ʖ ͡°)
+    Vue.js + vuex demo app  ͡(° ͜ʖ ͡°)
+    <br>
+    store user data to localStorage
+    <br>
+    load presets
   </div>
 
   <div id="vue-app">
@@ -35,8 +39,6 @@
     <radio-component v-bind:number-of-radios="3" :sound-file-path="'css/sounds/02.mp3'"></radio-component>
   </div>
 
-  <script src="js/randomColor.min.js"></script>
-  <script src="js/vue.js"></script>
-  <script src="js/client.js"></script>
+  <script src="dist/build.js"></script>
 </body>
 </html>

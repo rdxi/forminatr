@@ -1,9 +1,11 @@
 ﻿- УМЕНЬШАЕМ SCOPE РЕЗКО
 - отменяем музыку
 - оставить genius-of-love только в одном элементе с лабелом "MUSIC!"
-- делаем компоненты
++ перенести в компоненты
 - пробуем vuex
 - пробуем разные состояния
+-? bouncy sound for radios only (https://freesound.org/people/Timbre/sounds/140873/)
+-? ptinggg sound?
 
 
 
