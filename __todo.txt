@@ -1,4 +1,16 @@
-﻿- "drum machine" - https://en.wikipedia.org/wiki/Drum_machine
+﻿- УМЕНЬШАЕМ SCOPE РЕЗКО
+- отменяем музыку
+- оставить genius-of-love только в одном элементе с лабелом "MUSIC!"
+- делаем компоненты
+- пробуем vuex
+- пробуем разные состояния
+
+
+
+- popuko, pipimi, poptepipic
+- нарезать все звуки одинаковой длины(можно добавлять тишину в конце) - иначе будет рассинхрон при длительном прослушивании
+- анимация блоков это и есть визуализация звука!
+- "drum machine" - https://en.wikipedia.org/wiki/Drum_machine
 - "Beatboxing" - CHECK OUT WIKIPEDIA SAMPLE FILE - ITS AWESOME - https://en.wikipedia.org/wiki/Beatboxing
 - https://developer.mozilla.org/en-US/docs/Web/API/DelayNode
 - возможность добавлять путь к музыке в разметку компонента в html
@@ -13,7 +25,7 @@
 - flexbox
 - square bgs
 - tomtom club sample
-- poptepic angry face with microphone as logo
+- poptepipic angry face with microphone as logo
 - title with big bold font
 
 

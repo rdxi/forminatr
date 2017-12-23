@@ -1,6 +1,6 @@
-var audioFiles = {
-  1: 'css/sounds/01.mp3'
-};
+// var audioFiles = {
+//   1: 'css/sounds/01.mp3'
+// };
 
 // shows false when changing radios!
 // var utils = {
@@ -19,7 +19,6 @@ var audioFiles = {
 // module.exports = soundOfMessage;
 
 // soundOfMessage.play()
-
 
 Vue.component('input-component', {
   template:
@@ -91,19 +90,18 @@ Vue.component('radio-component', {
     }
   },
 
-
   data: function() {
     return {
       activeRadio: null,
       generatedName: null,
       sound: new Audio(this.soundFilePath),
+      soundEnded: false,
+      soundDelay: 1000,
+      soundPlayBackRate: 1
     };
   },
 
   methods: {
-    soundIsPlaying: function() {
-      return utils.isPlaying(this.sound);
-    },
     nextRadio: function() {
       if (this.activeRadio === this.numberOfRadios) {
         this.activeRadio = null;
@@ -111,30 +109,40 @@ Vue.component('radio-component', {
         this.activeRadio++;
       }
     },
-    changeSoundSpeed: function() {
-      return this.sound.playbackRate = (this.numberOfRadios / this.activeRadio)/(2*this.numberOfRadios);
+    playSoundWithLoop: function() {
+      var that = this;
+
+      this.sound.addEventListener('ended', function listener() {
+        that.soundEnded = true;
+        that.sound.removeEventListener('ended', listener);
+      });
+
+      this.soundEnded = false;
+      this.sound.currentTime = 0;
+      this.sound.play();
     }
   },
   watch: {
+    soundEnded: function() {
+      var that = this;
+      if (this.soundEnded === true && this.activeRadio) {
+        this.soundDelayTimeout = setTimeout(function() {
+          that.playSoundWithLoop();
+        }, that.soundDelay);
+      }
+    },
+
     activeRadio: function() {
-      // console.log('huh');
+      clearTimeout(this.soundDelayTimeout);
       if (this.activeRadio) {
-        this.sound.play();
+        this.playSoundWithLoop();
       } else {
-        this.sound.currentTime = 0;
         this.sound.pause();
+        this.sound.currentTime = 0;
       }
     }
   },
   computed: {
-    // toggleSound: function() {
-    //   if (this.activeRadio) {
-    //     this.sound.play();
-    //   } else {
-    //     this.sound.currentTime = 0;
-    //     this.sound.pause();
-    //   }
-    // },
     styleObject: function() {
       return {
         'animation-duration': (this.numberOfRadios / this.activeRadio)/(2*this.numberOfRadios) + 's', // first radio - slowest animation, last radio - fastest animation
@@ -148,8 +156,11 @@ Vue.component('radio-component', {
     }
   },
   created: function() {
-    this.sound.loop = true;
+    var that = this;
+
     this.sound.preload = 'auto';
+    // this.soundPlayBackRate = this.sound.playbackRate;
+
     this.generatedName = new Date().getTime() + Math.round(Math.random()*1000);
   }
 });
@@ -162,10 +173,60 @@ Vue.component('checkbox-component', {
   </label>
   `,
 
+  props: {
+    // TODO remove this or something
+    numberOfRadios: {
+      type: Number,
+      default: 1
+    },
+    soundFilePath: {
+      type: String,
+      default: ''
+    }
+  },
+
   data: function() {
     return {
-      isActive: null
+      isActive: null,
+      sound: new Audio(this.soundFilePath),
+      soundEnded: false,
+      soundDelay: 1000,
+      soundPlayBackRate: 1
     };
+  },
+  methods: {
+    playSoundWithLoop: function() {
+      var that = this;
+
+      this.sound.addEventListener('ended', function listener() {
+        that.soundEnded = true;
+        that.sound.removeEventListener('ended', listener);
+      });
+
+      this.soundEnded = false;
+      this.sound.currentTime = 0;
+      this.sound.play();
+    }
+  },
+  watch: {
+    soundEnded: function() {
+      var that = this;
+      if (this.soundEnded === true && this.activeRadio) {
+        this.soundDelayTimeout = setTimeout(function() {
+          that.playSoundWithLoop();
+        }, that.soundDelay);
+      }
+    },
+
+    isActive: function() {
+      clearTimeout(this.soundDelayTimeout);
+      if (this.isActive) {
+        this.playSoundWithLoop();
+      } else {
+        this.sound.pause();
+        this.sound.currentTime = 0;
+      }
+    }
   },
   computed: {
     styleObject: function() {
