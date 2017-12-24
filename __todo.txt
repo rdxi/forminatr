@@ -1,4 +1,9 @@
-﻿- УМЕНЬШАЕМ SCOPE РЕЗКО
+﻿+ add mixin to button.vue
++ add getter to store.js  ('componentObj' repeats a lot)
+- add two-way computed property and bring back model to all components https://vuex.vuejs.org/en/forms.html
+- add music component, eye, popuko
+
+- УМЕНЬШАЕМ SCOPE РЕЗКО
 - отменяем музыку
 - оставить banana-split только в одном элементе с лабелом "MUSIC!" и прогресс баром
 + перенести в компоненты
@@ -10,7 +15,6 @@ https://stackoverflow.com/questions/44345704/separating-vuex-stores-for-dynamica
 -? bouncy sound for radios only (https://freesound.org/people/Timbre/sounds/140873/)
 -? ptinggg sound?
 - eye following cursor (maybe make from svg) https://codepen.io/sergep/pen/CBwhg?page=1&, https://codepen.io/CriticalMammal/pen/mJzLKv?page=1&
-
 
 
 - popuko, pipimi, poptepipic

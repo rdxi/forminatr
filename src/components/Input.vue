@@ -1,7 +1,7 @@
 <template>
   <label class="element-wrap" :class="computedClass" :style="styleObject">
     <div class="textinput-wrap">
-      <input type="text" v-model="isActive">
+      <input type="text" :value="isActive" @input="toggleValueActive">
       <div class="textinput-control textinput-control--fill-input" @click="fillInput">Fill input</div>
       <div class="textinput-control textinput-control--clear-input" @click="clearInput">Clear input</div>
     </div>
@@ -10,20 +10,25 @@
 
 <script>
 import randomColor from 'randomcolor';
+import IdAndActiveState from './mixins/IdAndActiveState.vue';
 
 export default {
-  data: function() {
-    return {
-      isActive: null
-    };
-  },
+
+  mixins: [IdAndActiveState],
 
   methods: {
+    toggleValueActive: function(e) {
+      var textInputValue = e.target.value;
+      var objToSend = {id: this.selfId, textInputValue: textInputValue};
+      this.$store.commit('toggleValueActive', objToSend);
+    },
     fillInput: function() {
-      this.isActive = 'some text!';
+      var objToSend = {id: this.selfId, textInputValue: 'some text!'};
+      this.$store.commit('toggleValueActive', objToSend);
     },
     clearInput: function() {
-      this.isActive = null;
+      var objToSend = {id: this.selfId};
+      this.$store.commit('deactivate', objToSend);
     }
   },
 

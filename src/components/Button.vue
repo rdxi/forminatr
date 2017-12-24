@@ -6,6 +6,7 @@
 
 <script>
 import randomColor from 'randomcolor';
+import IdAndActiveState from './mixins/IdAndActiveState.vue'
 
 export default {
   // this data moved to global store
@@ -14,21 +15,23 @@ export default {
   //     // isActive: null
   //   };
   // }
-  data: function() {
-    return {
-      selfId: null
-    }
-  },
+  // data: function() {
+  //   return {
+  //     selfId: null
+  //   }
+  // },
+
+  mixins: [IdAndActiveState],
 
   computed: {
-    isActive: function () {
-      var that = this;
-      var currentStateObj = this.$store.state.myComponents.find(function(component) {
-        return component.id === that.selfId;
-      });
+    // isActive: function () {
+    //   var that = this;
+    //   var currentStateObj = this.$store.state.myComponents.find(function(component) {
+    //     return component.id === that.selfId;
+    //   });
 
-      return currentStateObj.isActive;
-    },
+    //   return currentStateObj.isActive;
+    // },
 
     styleObject: function() {
       return {
@@ -41,17 +44,15 @@ export default {
       };
     }
   },
-  methods: {
-    toggleActive: function() {
-      this.$store.commit('toggleActive', this.selfId);
-    }
-  },
-  created: function() {
-    // generate component id and send it to store
-    this.selfId = new Date().getTime() + Math.round(Math.random()*1000);
-    this.$store.state.myComponents.push({id: this.selfId, isActive: false});
-  }
+  // methods: {
+  //   toggleActive: function() {
+  //     this.$store.commit('toggleActive', this.selfId);
+  //   }
+  // },
+  // created: function() {
+  //   // generate component id and send it to store
+  //   this.selfId = new Date().getTime() + Math.round(Math.random()*1000);
+  //   this.$store.state.myComponents.push({id: this.selfId, isActive: false});
+  // }
 }
 </script>
-
-

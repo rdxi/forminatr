@@ -1,16 +1,22 @@
 <template>
   <div class="preset-buttons">
-    <button @click="changePreset(1)">preset 1</button>
-    <button @click="changePreset(2)">preset 2</button>
+    <button @click="activateAll">Activate all</button>
+    <button @click="deactivateAll">Deactivate all</button>
   </div>
 </template>
 
 <script>
 export default {
   methods: {
-    changePreset: function(presetNumber) {
-      this.$store.commit('changePreset', presetNumber)
+    activateAll: function() {
+      this.$store.commit('activateAll');
+    },
+    deactivateAll: function() {
+      this.$store.commit('deactivateAll');
     }
+    // changePreset: function(presetNumber) {
+    //   this.$store.commit('changePreset', presetNumber)
+    // }
   }
 }
 </script>
