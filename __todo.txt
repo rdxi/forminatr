@@ -1,11 +1,15 @@
 ﻿- УМЕНЬШАЕМ SCOPE РЕЗКО
 - отменяем музыку
-- оставить genius-of-love только в одном элементе с лабелом "MUSIC!"
+- оставить banana-split только в одном элементе с лабелом "MUSIC!" и прогресс баром
 + перенести в компоненты
 - пробуем vuex
+https://forum.vuejs.org/t/vuex-best-practices-for-complex-objects/10143
+https://vuejs.org/v2/guide/mixins.html
+https://stackoverflow.com/questions/44345704/separating-vuex-stores-for-dynamically-created-components
 - пробуем разные состояния
 -? bouncy sound for radios only (https://freesound.org/people/Timbre/sounds/140873/)
 -? ptinggg sound?
+- eye following cursor (maybe make from svg) https://codepen.io/sergep/pen/CBwhg?page=1&, https://codepen.io/CriticalMammal/pen/mJzLKv?page=1&
 
 
 
