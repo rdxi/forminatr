@@ -35,7 +35,9 @@ var store = new Vuex.Store({
     },
 
     startCascade: function(state) {
-      // deactivate all item
+      clearInterval(this.cascadeInterval);
+
+      // deactivate all items
       state.myComponents.forEach(function(item) {
         item.isActive = null;
       });

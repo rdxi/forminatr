@@ -1,6 +1,7 @@
 ﻿- put final version on codrops! (with link to portfolio and source code)
 
 + cascade toggle all elements one after another [--- => x-- => xx- => xxx => -xx => --x] (setInterval)
++ multiple clicks on cascade start prevent clearinterval
 + [fixed] - radios are broken during cascade
 -? test in IE
 - invert elements
