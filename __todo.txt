@@ -1,7 +1,18 @@
-﻿+ add mixin to button.vue
+﻿+ change random selfId generation
+- put final version on codrops! (with link to portfolio and source code)
+
+- cascade toggle all elements one after another [--- => x-- => xx- => xxx => -xx => --x] (setInterval)
+- invert elements
+- random toggle elements (setInterval)
+
+-? make isActive null\true for radios?
+- LMAO https://www.tumblr.com/search/pop+team+epic
+- try getter shorthand like this: var getters = ['this.state.getters']; [getters].getComponentById;
+- add music component, eye, popuko
++ add mixin to button.vue
 + add getter to store.js  ('componentObj' repeats a lot)
 - add two-way computed property and bring back model to all components https://vuex.vuejs.org/en/forms.html
-- add music component, eye, popuko
+-? add invert button
 
 - УМЕНЬШАЕМ SCOPE РЕЗКО
 - отменяем музыку

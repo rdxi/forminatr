@@ -1,4 +1,6 @@
 <script>
+import uuid from 'uuid/v4';
+
 export default {
   data: function() {
     return {
@@ -7,7 +9,7 @@ export default {
   },
 
   created: function() {
-    this.selfId = new Date().getTime() + Math.round(Math.random()*1000);
+    this.selfId = uuid();
     this.$store.state.myComponents.push({id: this.selfId, isActive: null});
   },
 
