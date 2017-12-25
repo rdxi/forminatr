@@ -24,6 +24,7 @@
 <script>
 import randomColor from 'randomcolor';
 import IdAndActiveState from './mixins/IdAndActiveState.vue';
+import uuid from 'uuid/v4';
 
 export default {
   mixins: [IdAndActiveState],
@@ -127,7 +128,7 @@ export default {
   },
   created: function() {
     // this.sound.preload = 'auto';
-    this.generatedName = new Date().getTime() + Math.round(Math.random()*1000);
+    this.generatedName = uuid();
   }
 }
 </script>

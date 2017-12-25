@@ -34,15 +34,31 @@ var store = new Vuex.Store({
       });
     },
 
+    startCascade: function(state) {
+      // deactivate all item
+      state.myComponents.forEach(function(item) {
+        item.isActive = null;
+      });
+
+      // toggle items one by one
+      var currentIndex = 0;
+      this.cascadeInterval = setInterval(function() {
+        var currentItem = state.myComponents[currentIndex];
+        currentItem.isActive = !currentItem.isActive ? 1 : null;
+        currentIndex = (currentIndex >= state.myComponents.length -1) ? (0) : (currentIndex + 1);
+      }, 100);
+    },
+
+    stopCascade: function(state) {
+      clearInterval(this.cascadeInterval);
+    },
+
     toggleActive: function(state, data) {
-      // console.log('***', componentObjTest);
-      // var componentObj = state.myComponents.find(component => component.id === id);
       var componentObj = store.getters.getComponentById(data.id);
       return componentObj.isActive = !componentObj.isActive;
     },
 
     toggleValueActive: function(state, data) {
-      // var componentObj = state.myComponents.find(component => component.id === data.id);
       var componentObj = store.getters.getComponentById(data.id);
       return componentObj.isActive = data.textInputValue ? data.textInputValue : null;
     },
