@@ -6,6 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Forminatr</title>
   <link href="https://fonts.googleapis.com/css?family=Bungee" rel="stylesheet">
+
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -16,6 +17,9 @@
 
   <div id="vue-app">
     <preset-buttons></preset-buttons>
+
+    <!-- <audio-component :sound-file-path="'css/sounds/01.mp3'"></audio-component> -->
+
 
     <button-component></button-component>
     <button-component></button-component>
@@ -32,6 +36,7 @@
       <button-component></button-component>
       <checkbox-component :sound-file-path="'css/sounds/tomtom1.mp3'"></checkbox-component>
     </div>
+    <audio-component :sound-file-path="'css/sounds/Tom Tom Club - Genius of Love.mp3'"></audio-component>
     <checkbox-component :sound-file-path="'css/sounds/tomtom2.mp3'"></checkbox-component>
     <radio-component v-bind:number-of-radios="1" :sound-file-path="'css/sounds/02.mp3'"></radio-component>
     <radio-component v-bind:number-of-radios="3" :sound-file-path="'css/sounds/02.mp3'"></radio-component>

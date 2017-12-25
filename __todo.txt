@@ -1,15 +1,18 @@
 ﻿- put final version on codrops! (with link to portfolio and source code)
 
++ add audio component
+- move randomColor to mixin
+- скачать шрифты
 + cascade toggle all elements one after another [--- => x-- => xx- => xxx => -xx => --x] (setInterval)
 + multiple clicks on cascade start prevent clearinterval
 + [fixed] - radios are broken during cascade
++ invert elements button
 -? test in IE
-- invert elements
-- random toggle elements (setInterval)
+-? random toggle elements (setInterval)
 
 -? make isActive null\true for radios?
 - LMAO https://www.tumblr.com/search/pop+team+epic
-- add music component, eye, popuko
+- add video, eye, popuko, select with options
 + change random selfId generation
 + add mixin to button.vue
 + add getter to store.js  ('componentObj' repeats a lot)

@@ -33,16 +33,16 @@ export default {
     //   return currentStateObj.isActive;
     // },
 
-    styleObject: function() {
-      return {
-        'background-color': randomColor()
-      };
-    },
-    computedClass: function() {
-      return {
-        'element-wrap--active': this.isActive
-      };
-    }
+    // styleObject: function() {
+    //   return {
+    //     'background-color': randomColor()
+    //   };
+    // },
+    // computedClass: function() {
+    //   return {
+    //     'element-wrap--active': this.isActive
+    //   };
+    // }
   },
   // methods: {
   //   toggleActive: function() {

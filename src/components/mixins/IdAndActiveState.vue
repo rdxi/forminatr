@@ -1,5 +1,6 @@
 <script>
 import uuid from 'uuid/v4';
+import randomColor from 'randomColor';
 
 export default {
   data: function() {
@@ -9,8 +10,7 @@ export default {
   },
 
   created: function() {
-    this.selfId = uuid();
-    this.$store.state.myComponents.push({id: this.selfId, isActive: null});
+    this.registerInStore();
   },
 
   computed: {
@@ -21,12 +21,28 @@ export default {
       });
 
       return currentStateObj.isActive;
+    },
+
+    styleObject: function() {
+      return {
+        'background-color': randomColor()
+      };
+    },
+
+    computedClass: function() {
+      return {
+        'element-wrap--active': this.isActive
+      };
     }
   },
 
   methods: {
     toggleActive: function() {
       this.$store.commit('toggleActive', {id: this.selfId});
+    },
+    registerInStore: function() {
+      this.selfId = uuid();
+      this.$store.state.myComponents.push({id: this.selfId, isActive: null});
     }
   }
 }
