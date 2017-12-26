@@ -5,7 +5,7 @@ import ButtonComponent from './components/Button.vue';
 import InputComponent from './components/Input.vue';
 import CheckboxComponent from './components/Checkbox.vue';
 import RadioComponent from './components/Radio.vue';
-import AudioComponent from './components/Audio.vue';
+import MediaComponent from './components/Media.vue';
 
 new Vue({
   el: '#vue-app',
@@ -16,7 +16,7 @@ new Vue({
     InputComponent,
     CheckboxComponent,
     RadioComponent,
-    AudioComponent
+    MediaComponent
   }
 
 });

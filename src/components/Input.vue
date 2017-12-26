@@ -9,7 +9,6 @@
 </template>
 
 <script>
-import randomColor from 'randomcolor';
 import IdAndActiveState from './mixins/IdAndActiveState.vue';
 
 export default {

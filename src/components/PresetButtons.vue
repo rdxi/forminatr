@@ -61,6 +61,7 @@ export default {
   .preset-buttons {
     display: flex;
     align-items: center;
+    justify-content: center;
     width: 100%;
     margin-bottom: 30px;
   }

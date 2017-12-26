@@ -1,58 +1,45 @@
 ﻿- put final version on codrops! (with link to portfolio and source code)
+- github pages (rdxi.github.io/forminatr)
 
-+ add audio component
-- move randomColor to mixin
+- popuko, pipimi, poptepipic
+- LMAO https://www.tumblr.com/search/pop+team+epic
+- add eye, popuko, select with options
 - скачать шрифты
+- add two-way computed property and bring back model to all components https://vuex.vuejs.org/en/forms.html
+-? test in IE
+-? make isActive null\true for radios?
+-? eye following cursor (maybe make from svg) https://codepen.io/sergep/pen/CBwhg?page=1&, https://codepen.io/CriticalMammal/pen/mJzLKv?page=1&
+
++ flexbox
++ title with big bold font
++ add invert button
++ change random selfId generation
++ add mixin to button.vue
++ add getter to store.js  ('componentObj' repeats a lot)
++ downsample tom tom club
++ delete unused sounds
++ move randomColor to mixin
++ add audio component
++ add video component
++ add ignoreMediaCheckbox
 + cascade toggle all elements one after another [--- => x-- => xx- => xxx => -xx => --x] (setInterval)
 + multiple clicks on cascade start prevent clearinterval
 + [fixed] - radios are broken during cascade
 + invert elements button
--? test in IE
--? random toggle elements (setInterval)
-
--? make isActive null\true for radios?
-- LMAO https://www.tumblr.com/search/pop+team+epic
-- add video, eye, popuko, select with options
-+ change random selfId generation
-+ add mixin to button.vue
-+ add getter to store.js  ('componentObj' repeats a lot)
-- add two-way computed property and bring back model to all components https://vuex.vuejs.org/en/forms.html
--? add invert button
-
-- УМЕНЬШАЕМ SCOPE РЕЗКО
-- отменяем музыку
-- оставить banana-split только в одном элементе с лабелом "MUSIC!" и прогресс баром
 + перенести в компоненты
-- пробуем vuex
-https://forum.vuejs.org/t/vuex-best-practices-for-complex-objects/10143
-https://vuejs.org/v2/guide/mixins.html
-https://stackoverflow.com/questions/44345704/separating-vuex-stores-for-dynamically-created-components
-- пробуем разные состояния
--? bouncy sound for radios only (https://freesound.org/people/Timbre/sounds/140873/)
--? ptinggg sound?
-- eye following cursor (maybe make from svg) https://codepen.io/sergep/pen/CBwhg?page=1&, https://codepen.io/CriticalMammal/pen/mJzLKv?page=1&
++ добавить vuex
++ крестик в текстовом инпуте для удаления текста
++ ? двойная анимация при активации: 1. радиал градиент увеличивается из центра, 2. pulse
++ возможность добавлять путь к музыке в разметку компонента в html
++ (pretty blue #00a1ff)(pulse-darken looks ok) меняем background-color у элементов через js, - переделать кейфреймы на radial gradient: 0%solid 50%transparent 100%solid
 
-
-- popuko, pipimi, poptepipic
-- нарезать все звуки одинаковой длины(можно добавлять тишину в конце) - иначе будет рассинхрон при длительном прослушивании
-- анимация блоков это и есть визуализация звука!
-- "drum machine" - https://en.wikipedia.org/wiki/Drum_machine
-- "Beatboxing" - CHECK OUT WIKIPEDIA SAMPLE FILE - ITS AWESOME - https://en.wikipedia.org/wiki/Beatboxing
-- https://developer.mozilla.org/en-US/docs/Web/API/DelayNode
-- возможность добавлять путь к музыке в разметку компонента в html
-- каждому типу инпутов свой тон: кнопкам - синий, радио - красный
-- (pretty blue #00a1ff)(pulse-darken looks ok) меняем background-color у элементов через js, - переделать кейфреймы на radial gradient: 0%solid 50%transparent 100%solid
-- vuex - сохранять состояние в local storage (весь vuex обьект). и загружать из него при обновлении страницы (компоненты одного типа определять по индексу)
-- добавить селект с готовыми состояниями страницы
-- крестик в текстовом инпуте для удаления текста
-- ? двойная анимация при активации: 1. радиал градиент увеличивается из центра, 2. pulse
-- ? звук "клик" при переключении инпута
-- радио-баттоны регулируют высоту звука
-- flexbox
-- square bgs
-- tomtom club sample
-- poptepipic angry face with microphone as logo
-- title with big bold font
-
-
-- *NO! TOO COPLEX ATM, JUST MAKE VUE.JS DEMO FOR NOW* audio visualizer tutorial: https://developer.mozilla.org/en-US/docs/Web/API/Web_Audio_API/Visualizations_with_Web_Audio_API, https://developer.mozilla.org/en-US/docs/Web/API/AudioContext/createMediaStreamSource also check https://codepen.io/awesomecoding/pen/rVBaab and https://developer.mozilla.org/en-US/docs/Web/API/BaseAudioContext/createAnalyser and https://www.patrick-wied.at/blog/how-to-create-audio-visualizations-with-javascript-html and https://github.com/wayou/HTML5_Audio_Visualizer and https://github.com/willianjusten/awesome-audio-visualization
+X нарезать все звуки одинаковой длины(можно добавлять тишину в конце) - иначе будет рассинхрон при длительном прослушивании
+X "drum machine" - https://en.wikipedia.org/wiki/Drum_machine
+X "Beatboxing" - CHECK OUT WIKIPEDIA SAMPLE FILE - ITS AWESOME - https://en.wikipedia.org/wiki/Beatboxing
+X https://developer.mozilla.org/en-US/docs/Web/API/DelayNode
+X каждому типу инпутов свой тон: кнопкам - синий, радио - красный
+X vuex - сохранять состояние в local storage (весь vuex обьект). и загружать из него при обновлении страницы (компоненты одного типа определять по индексу)
+X добавить селект с готовыми состояниями страницы
+X ? звук "клик" при переключении инпута
+X радио-баттоны регулируют высоту звука
+X poptepipic angry face with microphone as logo

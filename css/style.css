@@ -1,5 +1,5 @@
 body {
-  padding: 20px;
+  padding: 0;
   margin: 0 auto;
   font-family: sans-serif;
   font-size: 16px;
@@ -21,12 +21,18 @@ h1 {
 .page-title {
   font-size: 54px;
   text-align: center;
+  margin-top: 20px;
   margin-bottom: 10px;
 }
 
 .page-subtitle {
   text-align: center;
   margin-bottom: 30px;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
 }
 
 #vue-app {
@@ -67,7 +73,7 @@ h1 {
   align-items: center;
   justify-content: center;
   padding: 20px;
-  transition: 0.2s all;
+  /* transition: 0.2s all; */
 }
 
 .element-wrap:not(.element-wrap--active) {

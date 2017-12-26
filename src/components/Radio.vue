@@ -119,15 +119,9 @@ export default {
         'animation-duration': (this.numberOfRadios / this.isActive)/(2*this.numberOfRadios) + 's', // first radio - slowest animation, last radio - fastest animation
         'background-color': randomColor()
       };
-    },
-    computedClass: function() {
-      return {
-        'element-wrap--active': this.isActive
-      };
     }
   },
   created: function() {
-    // this.sound.preload = 'auto';
     this.generatedName = uuid();
   }
 }

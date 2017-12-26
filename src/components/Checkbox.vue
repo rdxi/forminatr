@@ -6,7 +6,6 @@
 </template>
 
 <script>
-import randomColor from 'randomcolor';
 import IdAndActiveState from './mixins/IdAndActiveState.vue';
 
 export default {
@@ -28,16 +27,16 @@ export default {
         this.$store.commit('toggleValueActive', objToSend);
       }
     },
-    styleObject: function() {
-      return {
-        'background-color': randomColor()
-      };
-    },
-    computedClass: function() {
-      return {
-        'element-wrap--active': this.isActive
-      };
-    }
+    // styleObject: function() {
+    //   return {
+    //     'background-color': randomColor()
+    //   };
+    // },
+    // computedClass: function() {
+    //   return {
+    //     'element-wrap--active': this.isActive
+    //   };
+    // }
   }
 
 }
