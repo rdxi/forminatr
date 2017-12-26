@@ -1,16 +1,14 @@
 FORMINATR
 ======
 
-BeatBox app made with Vue.js
+Vue.js + vuex demo app.
 
-Link: ....
-
-<screenshot>
+Online demo: [https://rdxi.github.io/forminatr/](https://rdxi.github.io/forminatr/)
 
 ## Features
+- vue.js+vuex
 - pretty colors
-- cool sounds
-- memes
+- cool music
 
 
 
