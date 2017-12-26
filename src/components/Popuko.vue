@@ -5,9 +5,9 @@
     :style="styleObject"
   >
     <div class="image-wrap">
-      <img src="media/popuko0.png" v-if="!isActive">
-      <img src="media/popuko1-2.gif" v-if="isActive === 1 || isActive === 2">
-      <img class="popuko-angry" src="media/popuko3.svg" v-if="isActive === 3">
+      <img src="media/popuko0.png" v-show="!isActive">
+      <img src="media/popuko1-2.gif" v-show="isActive === 1 || isActive === 2">
+      <img class="popuko-angry" src="media/popuko3.svg" v-show="isActive === 3">
     </div>
     <input type="radio"
       v-model="isActive"
