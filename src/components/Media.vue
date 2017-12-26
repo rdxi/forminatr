@@ -45,7 +45,7 @@ export default {
     },
     registerInStore: function() {
       this.selfId = uuid();
-      this.$store.state.myComponents.push({id: this.selfId, isActive: null, isAudio: true});
+      this.$store.state.myComponents.push({id: this.selfId, isActive: null, isMedia: true});
     }
   },
 

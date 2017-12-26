@@ -11,17 +11,12 @@
       <button @click="startCascade">Start cascade</button>
       <button @click="stopCascade">Stop cascade</button>
       <label>
-        <input type="checkbox" v-model="ignoreMedia">
-        <span>Ignore media</span>
+        <span class="checkbox-wrap-span"><input type="checkbox" v-model="ignoreMedia">&nbsp;Ignore&nbsp;media</span>
       </label>
     </div>
     <div class="preset-button-wrap preset-button-wrap--invert">
       <button @click="invertActive">Invert active</button>
     </div>
-    <!-- <label class="preset-button-wrap">
-      <input type="checkbox" v-model="ignoreMedia">
-      <span>Ignore media</span>
-    </label> -->
   </div>
 </template>
 
@@ -74,6 +69,11 @@ export default {
     margin-right: 20px;
     padding: 20px;
     outline: 1px solid #000;
+  }
+
+  .checkbox-wrap-span {
+    display: inline-block;
+    vertical-align: middle;
   }
 </style>
 

@@ -11,9 +11,6 @@ var store = new Vuex.Store({
   },
 
   getters: {
-    // getTodoById: (state) => (id) => {
-    //   return state.todos.find(todo => todo.id === id);
-    // },
     getComponentById: function(state) {
       return function(id) {
         return state.myComponents.find(component => component.id === id);
@@ -39,8 +36,8 @@ var store = new Vuex.Store({
 
       // deactivate all items
       state.myComponents.forEach(function(item) {
-        var ignoreMedia = state.ignoreMedia && item.isAudio;
-        if (ignoreMedia) return; // don't toggle if audio
+        var ignoreMedia = state.ignoreMedia && item.isMedia;
+        if (ignoreMedia) return; // don't toggle if media
 
         item.isActive = null;
       });
@@ -50,9 +47,9 @@ var store = new Vuex.Store({
       this.cascadeInterval = setInterval(function() {
         var currentItem = state.myComponents[currentIndex];
 
-        var ignoreMedia = state.ignoreMedia && currentItem.isAudio;
+        var ignoreMedia = state.ignoreMedia && currentItem.isMedia;
 
-        if (!ignoreMedia) { // don't toggle if audio
+        if (!ignoreMedia) { // don't toggle if media
           currentItem.isActive = !currentItem.isActive ? 1 : null;
         }
         currentIndex = (currentIndex >= state.myComponents.length -1) ? (0) : (currentIndex + 1);
@@ -81,12 +78,7 @@ var store = new Vuex.Store({
     },
 
     toggleIgnoreMedia: function(state, checkboxValue) {
-      console.log(checkboxValue);
-      console.log('store', store);
-      console.log('state', state);
       return state.ignoreMedia = checkboxValue;
-      // var componentObj = store.getters.getComponentById(data.id);
-      // return componentObj.isActive = data.textInputValue ? data.textInputValue : null;
     },
 
     activate: function(state, data) {
@@ -95,7 +87,6 @@ var store = new Vuex.Store({
     },
 
     deactivate: function(state, data) {
-      // var componentObj = state.myComponents.find(component => component.id === data.id);
       var componentObj = store.getters.getComponentById(data.id);
       return componentObj.isActive = null;
     },

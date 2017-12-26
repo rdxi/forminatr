@@ -1,6 +1,7 @@
 ﻿- put final version on codrops! (with link to portfolio and source code)
 - github pages (rdxi.github.io/forminatr)
 
+- clean-up
 - popuko, pipimi, poptepipic
 - LMAO https://www.tumblr.com/search/pop+team+epic
 - add eye, popuko, select with options

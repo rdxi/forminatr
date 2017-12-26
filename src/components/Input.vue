@@ -29,19 +29,6 @@ export default {
       var objToSend = {id: this.selfId};
       this.$store.commit('deactivate', objToSend);
     }
-  },
-
-  computed: {
-    // styleObject: function() {
-    //   return {
-    //     'background-color': randomColor()
-    //   };
-    // },
-    // computedClass: function() {
-    //   return {
-    //     'element-wrap--active': this.isActive
-    //   };
-    // }
   }
 }
 </script>
