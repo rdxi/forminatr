@@ -6,6 +6,7 @@ import InputComponent from './components/Input.vue';
 import CheckboxComponent from './components/Checkbox.vue';
 import RadioComponent from './components/Radio.vue';
 import MediaComponent from './components/Media.vue';
+import PopukoComponent from './components/Popuko.vue';
 
 new Vue({
   el: '#vue-app',
@@ -16,7 +17,8 @@ new Vue({
     InputComponent,
     CheckboxComponent,
     RadioComponent,
-    MediaComponent
+    MediaComponent,
+    PopukoComponent
   }
 
 });

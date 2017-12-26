@@ -4,13 +4,13 @@
     :class="computedClass"
     :style="styleObject"
   >
-  <input type="radio"
-    v-model="isActive"
-    v-for="index in numberOfRadios"
-    :name="generatedName"
-    :value="index"
-    :key="index"
-  >
+    <input type="radio"
+      v-model="isActive"
+      v-for="index in numberOfRadios"
+      :name="generatedName"
+      :value="index"
+      :key="index"
+    >
   </div>
 </template>
 
