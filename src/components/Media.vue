@@ -23,12 +23,18 @@ export default {
 
   computed: {
     isActive: function () {
-      var that = this;
-      var currentStateObj = this.$store.state.myComponents.find(function(component) {
-        return component.id === that.selfId;
-      });
+      var currentStateObj = this.$store.getters.getComponentById(this.selfId);
       this.audioPlayback(currentStateObj.isActive);
+
       return currentStateObj.isActive;
+    }
+  },
+
+  watch: {
+    // to keep playing on route change, dunno why it stops though
+    '$route': function(route) {
+      var currentStateObj = this.$store.getters.getComponentById(this.selfId);
+      this.audioPlayback(currentStateObj.isActive);
     }
   },
 
@@ -58,6 +64,7 @@ export default {
     });
 
     mediaElement.addEventListener('pause', function() {
+      if (that.$route.path !== '/') return;
       that.$store.commit('deactivate', {id: that.selfId});
     });
   }

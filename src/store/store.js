@@ -88,6 +88,7 @@ var store = new Vuex.Store({
 
     deactivate: function(state, data) {
       var componentObj = store.getters.getComponentById(data.id);
+      if (!componentObj) return;
       return componentObj.isActive = null;
     },
 
@@ -95,6 +96,10 @@ var store = new Vuex.Store({
       // var componentObj = state.myComponents.find(component => component.id === data.id);
       var componentObj = store.getters.getComponentById(data.id);
       return componentObj.isActive++;
+    },
+
+    deleteComponentData: function(state) {
+      return state.myComponents = [];
     }
   }
 });

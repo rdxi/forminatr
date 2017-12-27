@@ -9,52 +9,25 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <h1 class="page-title">Forminatr</h1>
-  <div class="page-subtitle">
-    Vue.js + vuex demo app  ͡(° ͜ʖ ͡°)
-    <br>
-    Click on inputs below or use presets
-  </div>
 
   <div id="vue-app">
-    <preset-buttons></preset-buttons>
+    <nav class="main-nav">
+      <router-link to="/" class="main-nav-link" exact>vuex demo</router-link>
+      <router-link to="/router-demo" class="main-nav-link">vue-router demo</router-link>
+    </nav>
 
-    <button-component></button-component>
-    <checkbox-component></checkbox-component>
-    <checkbox-component></checkbox-component>
-    <input-component></input-component>
-    <radio-component :number-of-radios="3"></radio-component>
-    <button-component></button-component>
-    <button-component></button-component>
-    <div class="flex-column">
-      <radio-component></radio-component>
+    <h1 class="page-title">Forminatr</h1>
+    <div class="page-subtitle">
+      Vue.js + vuex demo app  ͡(° ͜ʖ ͡°)
+      <br>
+      Click on inputs below or use presets
     </div>
-    <radio-component :number-of-radios="5"></radio-component>
-    <media-component>
-      <audio slot="mediaSlot" src="media/Tom Tom Club - Genius of Love (downsampled).mp3" preload loop controls></audio>
-    </media-component>
-    <input-component></input-component>
-    <div class="flex-column">
-      <radio-component :number-of-radios="8"></radio-component>
-      <button-component></button-component>
-      <checkbox-component></checkbox-component>
-    </div>
-    <media-component>
-      <video slot="mediaSlot" src="media/street1.mp4" preload loop controls muted width="300"></video>
-    </media-component>
-    <checkbox-component></checkbox-component>
-    <radio-component :number-of-radios="1"></radio-component>
-    <radio-component :number-of-radios="3"></radio-component>
-    <popuko-component :number-of-radios="3"></popuko-component>
-    <div class="flex-column">
-      <radio-component :number-of-radios="3"></radio-component>
-      <input-component></input-component>
-      <button-component></button-component>
-    </div>
-    <button-component></button-component>
-    <input-component></input-component>
 
-
+    <div class="main-content">
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </div>
   </div>
 
   <script src="dist/build.js"></script>
