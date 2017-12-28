@@ -56,14 +56,14 @@ export default {
     RadioComponent,
     MediaComponent,
     PopukoComponent
-  },
-
-  beforeRouteLeave (to, from, next) {
-    // fixed this by using keep-alive
-    // // need to clear store on route change (because we push new data to store on every component creation, and store will keep old data otherwise)
-    // this.$store.commit('stopCascade');
-    // this.$store.commit('deleteComponentData');
-    next();
   }
+
+  // beforeRouteLeave (to, from, next) {
+  //   // fixed this by using keep-alive instead
+  //   // // need to clear store on route change (because we push new data to store on every component creation, and store will keep old data otherwise)
+  //   // this.$store.commit('stopCascade');
+  //   // this.$store.commit('deleteComponentData');
+  //   next();
+  // }
 }
 </script>

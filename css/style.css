@@ -54,6 +54,39 @@ h1 {
   font-weight: bold;
 }
 
+.router-page nav {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.inner-nav-link {
+  padding: 20px;
+  margin-right: 20px;
+  background-color: peachpuff;
+  margin: 5px;
+  outline: 1px solid #333;
+}
+
+.inner-nav-link.router-link-active  {
+  font-weight: bold;
+}
+
+.page-content-inner {
+  padding: 20px;
+}
+
+.page-content-inner--static {
+  background-color: lightblue;
+}
+
+.page-content-inner--dynamic {
+  background-color: beige;
+}
+
+.page-content-inner--remote {
+  background-color: lavenderblush;
+}
+
 .page-content.page-content--index {
   display: flex;
   flex-wrap: wrap;

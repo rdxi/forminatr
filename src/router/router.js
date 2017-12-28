@@ -5,7 +5,7 @@ import IndexPage from '../pages/IndexPage.vue';
 import RouterDemoPage from '../pages/RouterDemoPage.vue';
 import RouterDemoPageInnerDynamic from '../pages/RouterDemoPageInnerDynamic.vue';
 import RouterDemoPageInnerStatic from '../pages/RouterDemoPageInnerStatic.vue';
-// const RouterDemoPage = { template: '<div>bar</div>' };
+import RouterDemoPageInnerRemote from '../pages/RouterDemoPageInnerRemote.vue';
 
 Vue.use(VueRouter);
 const router = new VueRouter({
@@ -20,8 +20,13 @@ const router = new VueRouter({
           component: RouterDemoPageInnerStatic
         },
         {
+          path: 'inner-remote',
+          component: RouterDemoPageInnerRemote
+        },
+        {
           // router-demo/:something is matched
-          path: ':pageNumber',
+          path: ':pageName',
+          props: true,
           component: RouterDemoPageInnerDynamic
         }
       ]
